@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.pramati.grepreplica.patternmatcher.ExtendedPatternMatcher;
+import com.pramati.grepreplica.patternmatcher.FullPatternMatcher;
 import com.pramati.grepreplica.patternmatcher.PatternMatcher;
 
 public class FileHandler {
@@ -13,7 +13,7 @@ public class FileHandler {
 	PatternMatcher patternMatcher;
 
 	public FileHandler(String regex) {
-		patternMatcher = new ExtendedPatternMatcher(regex);
+		patternMatcher = new FullPatternMatcher(regex);
 	}
 
 	public int matchPattern(File file) {
