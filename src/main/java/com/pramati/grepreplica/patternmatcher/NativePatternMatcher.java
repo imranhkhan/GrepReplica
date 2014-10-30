@@ -20,7 +20,7 @@ public class NativePatternMatcher implements PatternMatcher {
 		int matchCount = 0;
 		try {
 			String[] cmd = new String[5];
-			cmd[0] = "C:\\cygwin64\\bin\\grep";
+			cmd[0] = "grep";
 			cmd[1] = "-e";
 			cmd[2] = regex;
 			cmd[3] = file.getAbsolutePath();

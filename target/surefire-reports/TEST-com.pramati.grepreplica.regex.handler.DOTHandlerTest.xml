@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.094" errors="0" skipped="0" tests="2" name="com.pramati.grepreplica.regex.handler.DOTHandlerTest">
+<testsuite failures="0" time="0" errors="0" skipped="0" tests="2" name="com.pramati.grepreplica.regex.handler.DOTHandlerTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin"/>
@@ -20,7 +20,7 @@
     <property name="basedir" value="D:\workspace\GrepReplica"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_71\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="D:\workspace\GrepReplica\target\surefire\surefirebooter9117934271546017852.jar"/>
+    <property name="surefire.real.class.path" value="D:\workspace\GrepReplica\target\surefire\surefirebooter3723328132521600270.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\imrank\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -28,7 +28,7 @@
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 8.1"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_71\bin;D:\Maven\apache-maven-3.0.2\bin;.;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_71\bin;D:\Maven\apache-maven-3.0.2\bin;C:\cygwin64\bin\;.;;."/>
     <property name="surefire.test.class.path" value="D:\workspace\GrepReplica\target\test-classes;D:\workspace\GrepReplica\target\classes;C:\Users\imrank\.m2\repository\junit\junit\4.2\junit-4.2.jar;C:\Users\imrank\.m2\repository\org\easymock\easymock\3.1\easymock-3.1.jar;C:\Users\imrank\.m2\repository\cglib\cglib-nodep\2.2.2\cglib-nodep-2.2.2.jar;C:\Users\imrank\.m2\repository\org\objenesis\objenesis\1.2\objenesis-1.2.jar;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
@@ -44,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_71\jre"/>
-    <property name="sun.java.command" value="D:\workspace\GrepReplica\target\surefire\surefirebooter9117934271546017852.jar D:\workspace\GrepReplica\target\surefire\surefire6384666028970552991tmp D:\workspace\GrepReplica\target\surefire\surefire2942453705691598666tmp"/>
+    <property name="sun.java.command" value="D:\workspace\GrepReplica\target\surefire\surefirebooter3723328132521600270.jar D:\workspace\GrepReplica\target\surefire\surefire4907633612314403229tmp D:\workspace\GrepReplica\target\surefire\surefire6799125327703191733tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,6 +61,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.094" classname="com.pramati.grepreplica.regex.handler.DOTHandlerTest" name="testHandleFalse"/>
   <testcase time="0" classname="com.pramati.grepreplica.regex.handler.DOTHandlerTest" name="testHandleTrue"/>
+  <testcase time="0" classname="com.pramati.grepreplica.regex.handler.DOTHandlerTest" name="testHandleFalse"/>
 </testsuite>

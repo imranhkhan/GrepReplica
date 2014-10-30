@@ -1,5 +1,15 @@
 package com.pramati.grepreplica;
 
+
+/*
+ * Main class that execute the grep on given file or directory
+ * It requires following command line argument
+ * 
+ * @args[0]  regex   @required
+ * @args[1]  file or directory @required 
+ * @args[2]  PatternMatcher to use OPTIONS[-e Extended , -f Java, -n Native, -m Minimal] @optional 
+ * 
+ * */
 public class GrepExecutor {
 
 	public static void main(String[] args) {

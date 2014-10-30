@@ -11,11 +11,7 @@ import com.pramati.grepreplica.patternmatcher.PatternMatcherFactory;
 
 public class FileHandler {
 
-	PatternMatcher patternMatcher;
-
-	public static int GETDOT_COUNT;
-	public static int GETEDGE_COUNT;
-	public static int EPSLOOP_COUNT;
+	private PatternMatcher patternMatcher;
 
 	public FileHandler(String regex, String matcherId) {
 		patternMatcher = PatternMatcherFactory.getPatternMatcher(regex,
@@ -65,5 +61,4 @@ public class FileHandler {
 		}
 		return matches;
 	}
-
 }

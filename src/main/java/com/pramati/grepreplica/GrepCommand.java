@@ -16,10 +16,6 @@ public class GrepCommand {
 		if (file.exists()) {
 			FileHandler fileHandler = new FileHandler(regex, matcherId);
 			totalMatch = fileHandler.matchPattern(file);
-
-			System.out.println("dot count =" + FileHandler.GETDOT_COUNT);
-			System.out.println("getlabled count " + FileHandler.GETEDGE_COUNT);
-			System.out.println("eps loop count=" + FileHandler.EPSLOOP_COUNT);
 		} else {
 			throw new RegExException("File/Folder doest not exist");
 		}
