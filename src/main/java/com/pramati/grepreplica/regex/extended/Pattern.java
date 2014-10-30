@@ -14,6 +14,7 @@ public class Pattern {
 	public static final char EPS = '.';
 	public static final char STAR = '*';
 	public static final char PLUS = '+';
+	public static final char QUEST = '?';
 
 	public Matcher compile(String regex) {
 		for (int i = 0; i < regex.length(); i++) {
@@ -24,14 +25,17 @@ public class Pattern {
 				defaultChar(label);
 				prevChar = label;
 				break;
-			case EPS:
+			case Pattern.EPS:
 				dotChar(EPS);
 				break;
-			case STAR:
+			case Pattern.STAR:
 				starChar();
 				break;
-			case PLUS:
+			case Pattern.PLUS:
 				plusChar();
+				break;
+			case Pattern.QUEST:
+				questChar();
 				break;
 			}
 		}
@@ -62,10 +66,9 @@ public class Pattern {
 	}
 
 	public void dotChar(char label) {
-		Edge edge;
 		State endState = new State();
-		edge = new Edge(nfa.getEndState(), endState, label);
-		nfa.getEndState().getEpsilonEdge().add(edge);
+		nfa.getEndState().getEpsilonEdge()
+				.add(new Edge(nfa.getEndState(), endState, label));
 		nfa.setEndState(endState);
 	}
 
@@ -76,16 +79,19 @@ public class Pattern {
 	}
 
 	public void starChar() {
-		//State endState = new State();
 		State nfaEndState = nfa.getEndState();
 		State prevState = getPrevState(nfaEndState);
 
-		prevState.getEdgeMap().put(prevChar,new Edge(prevState, prevState, prevChar));
-		//nfaEndState.getEpsilonEdge().add(new Edge(nfaEndState, prevState, EPS));
-		//nfaEndState.getEpsilonEdge().add(new Edge(nfaEndState, endState, EPS));
-		//nfaEndState.getEdgeMap().put(prevChar,
-			//	new Edge(nfaEndState, nfaEndState, prevChar));
+		prevState.getEdgeMap().put(prevChar,
+				new Edge(prevState, prevState, prevChar));
 		nfa.setEndState(prevState);
+	}
+
+	public void questChar() {
+		State nfaEndState = nfa.getEndState();
+		State prevState = getPrevState(nfaEndState);
+		prevState.getEpsilonEdge().add(
+				new Edge(prevState, nfaEndState, Pattern.EPS));
 	}
 
 	public State getPrevState(State currState) {

@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class State {
-	private final int stateId;
-	private final Map<Character, Edge> edgeMap = new HashMap<Character, Edge>();
-	private Map<Character, Edge> prevEdgeMap = new HashMap<Character, Edge>();
-	private List<Edge> epsilonEdge = new ArrayList<Edge>();
+
 	private boolean isFinal = false;
 	private static int idcounter = 0;
+	
+	private final int stateId;
+	private final Map<Character, Edge> edgeMap = new HashMap<Character, Edge>();
+	private final Map<Character, Edge> prevEdgeMap = new HashMap<Character, Edge>();
+	private final List<Edge> epsilonEdge = new ArrayList<Edge>();
 
 	public State() {
 		stateId = idcounter++;
@@ -29,16 +31,8 @@ public class State {
 		return epsilonEdge;
 	}
 
-	public void setEpsilonEdge(List<Edge> epsilonEdge) {
-		this.epsilonEdge = epsilonEdge;
-	}
-
 	public Map<Character, Edge> getPrevEdgeMap() {
 		return prevEdgeMap;
-	}
-
-	public void setPrevEdgeMap(Map<Character, Edge> preEdgeMap) {
-		this.prevEdgeMap = preEdgeMap;
 	}
 
 	public boolean isFinal() {

@@ -3,15 +3,15 @@ package com.pramati.grepreplica.patternmatcher;
 
 import java.io.File;
 
-import com.pramati.grepreplica.regex.RegExPattern;
 import com.pramati.grepreplica.regex.exception.RegExException;
+import com.pramati.grepreplica.regex.minimal.RegExPattern;
 
 public class MinimalPatternMatcher implements PatternMatcher {
 
 	private RegExPattern regexPattern;
 
-	public MinimalPatternMatcher(String regex) {
-		regexPattern = new RegExPattern(regex);
+	public void initialize(String regex) {
+		regexPattern = new RegExPattern(regex);	
 	}
 
 	public boolean match(String inputStr) {

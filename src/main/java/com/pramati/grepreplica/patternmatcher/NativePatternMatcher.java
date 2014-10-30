@@ -10,9 +10,9 @@ import com.pramati.grepreplica.regex.exception.RegExException;
 
 public class NativePatternMatcher implements PatternMatcher {
 
-	private final String regex;
+	private String regex;
 
-	public NativePatternMatcher(String regex) {
+	public void initialize(String regex) {
 		this.regex = regex;
 	}
 
@@ -44,6 +44,5 @@ public class NativePatternMatcher implements PatternMatcher {
 		// TODO Auto-generated method stub
 		throw new RegExException("Not implemented");
 	}
-	
-	
+
 }

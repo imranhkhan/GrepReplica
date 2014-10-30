@@ -5,15 +5,21 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-import com.pramati.grepreplica.patternmatcher.FullPatternMatcher;
+import com.pramati.grepreplica.patternmatcher.NativePatternMatcher;
 import com.pramati.grepreplica.patternmatcher.PatternMatcher;
+import com.pramati.grepreplica.patternmatcher.PatternMatcherFactory;
 
 public class FileHandler {
 
 	PatternMatcher patternMatcher;
 
-	public FileHandler(String regex) {
-		patternMatcher = new FullPatternMatcher(regex);
+	public static int GETDOT_COUNT;
+	public static int GETEDGE_COUNT;
+	public static int EPSLOOP_COUNT;
+
+	public FileHandler(String regex, String matcherId) {
+		patternMatcher = PatternMatcherFactory.getPatternMatcher(regex,
+				matcherId);
 	}
 
 	public int matchPattern(File file) {
@@ -40,14 +46,20 @@ public class FileHandler {
 		int matches = 0;
 		String inputStr = "";
 		try {
-			BufferedReader fileReader = new BufferedReader(new FileReader(file));
-			while ((inputStr = fileReader.readLine()) != null) {
-				if (patternMatcher.match(inputStr)) {
-					matches++;
+			if (patternMatcher instanceof NativePatternMatcher) {
+				matches = patternMatcher.match(file);
+			} else {
+				BufferedReader fileReader = new BufferedReader(new FileReader(
+						file));
+				while ((inputStr = fileReader.readLine()) != null) {
+					if (patternMatcher.match(inputStr)) {
+						matches++;
+					}
 				}
+				fileReader.close();
 			}
-			fileReader.close();
-			System.out.println("matches in file " + matches + "\n");
+			System.out.println("matches in file " + file.getName() + " = "
+					+ matches + "\n");
 		} catch (IOException ie) {
 			ie.printStackTrace();
 		}

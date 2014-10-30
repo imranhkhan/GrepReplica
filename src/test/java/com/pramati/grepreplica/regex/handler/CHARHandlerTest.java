@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
-import com.pramati.grepreplica.regex.Context;
+import com.pramati.grepreplica.regex.minimal.Context;
+import com.pramati.grepreplica.regex.minimal.handler.CHARHandler;
 
 public class CHARHandlerTest {
 

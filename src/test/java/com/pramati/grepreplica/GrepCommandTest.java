@@ -18,7 +18,7 @@ public class GrepCommandTest{
 	
 	@Test(expected = RuntimeException.class)
 	public void testGrep1(){
-		grepCommand.grep("some-file","some-file");
+		grepCommand.grep("some-file","some-file","-e");
 	}
 
 }

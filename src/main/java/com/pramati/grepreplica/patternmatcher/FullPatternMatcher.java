@@ -10,8 +10,9 @@ public class FullPatternMatcher implements PatternMatcher {
 
 	private Pattern pattern;
 
-	public FullPatternMatcher(String regex) {
+	public void initialize(String regex) {
 		pattern = Pattern.compile(regex);
+
 	}
 
 	public boolean match(String inputStr) {

@@ -10,9 +10,10 @@ public class ExtendedPatternMatcher implements PatternMatcher {
 	private Pattern pattern;
 	private Matcher matcher;
 
-	public ExtendedPatternMatcher(String regex) {
+	public void initialize(String regex) {
 		pattern = new Pattern();
 		matcher = pattern.compile(regex);
+
 	}
 
 	public boolean match(String testStr) {

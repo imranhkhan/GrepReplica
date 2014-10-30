@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Matcher {
 
-	private NFA nfa;
+	private final NFA nfa;
 
 	public Matcher(NFA nfa) {
 		this.nfa = nfa;
@@ -14,40 +14,59 @@ public class Matcher {
 		State currState = nfa.getStartState();
 		for (int i = 0; i < testStr.length(); i++) {
 			if (currState != nfa.getEndState()) {
-				Edge edge = getCurrEdge(currState, testStr.charAt(i));
+				Edge edge = getEdge(currState, testStr.charAt(i));
 				if (edge != null) {
-					//System.out.println(" " + currState.getStateId() + " "
-					//		+ testStr.charAt(i) + " " + edge.getLabel());
 					currState = edge.getDest();
 				} else {
 					currState = nfa.getStartState();
 				}
+			} else {
+				break;
 			}
 		}
 		return currState.isFinal();
 	}
 
-	public Edge getCurrEdge(State currState, char label) {
+	public Edge getEdge(State currState, char label) {
+		Edge edge = getDotEdge(currState);
+		if (edge == null) {
+			edge = getLabledEdge(currState, label);
+		}
+		return edge;
+
+	}
+
+	public Edge getLabledEdge(State currState, char label) {
 		Edge edge = currState.getEdgeMap().get(label);
+		// FileHandler.GETEDGE_COUNT++;
 		if (edge == null) {
 			List<Edge> epsEdges = currState.getEpsilonEdge();
-			for (Edge epsEdge : epsEdges) {
-				State destState = epsEdge.getDest();
-				if (destState.getEdgeMap().get(label) != null) {
-					edge = destState.getEdgeMap().get(label);
-					break;
-				}
-				edge = epsEdges.get(0);
+			if (epsEdges.size() > 0) {
+				edge = getEdgeByEpsilonTransition(epsEdges, label);
 			}
 		}
-
 		return edge;
 	}
 
-	public static void main(String[] args) {
-		Matcher matcher = new Pattern().compile("File");
-		System.out
-				.println(matcher
-						.find("Marking Film C:\\Windows\\system32\\regsvr32.exe to run when uninstalled"));
+	public Edge getDotEdge(State currState) {
+		// FileHandler.GETDOT_COUNT++;
+		if (currState.getEdgeMap().size() == 0
+				&& currState.getEpsilonEdge().size() == 1) {
+			return currState.getEpsilonEdge().get(0);
+		}
+		return null;
+	}
+
+	public Edge getEdgeByEpsilonTransition(List<Edge> epsEdges, char label) {
+		Edge edge = null;
+		for (Edge epsEdge : epsEdges) {
+			// FileHandler.EPSLOOP_COUNT++;
+			State destState = epsEdge.getDest();
+			if (destState.getEdgeMap().get(label) != null) {
+				edge = destState.getEdgeMap().get(label);
+				break;
+			}
+		}
+		return edge;
 	}
 }

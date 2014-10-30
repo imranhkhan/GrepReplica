@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.016" errors="0" skipped="0" tests="1" name="com.pramati.grepreplica.GrepCommandTest">
+<testsuite failures="0" time="0.015" errors="0" skipped="0" tests="1" name="com.pramati.grepreplica.GrepCommandTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_71\jre\bin"/>
@@ -20,7 +20,7 @@
     <property name="basedir" value="D:\workspace\GrepReplica"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_71\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="D:\workspace\GrepReplica\target\surefire\surefirebooter5103340357785642942.jar"/>
+    <property name="surefire.real.class.path" value="D:\workspace\GrepReplica\target\surefire\surefirebooter9117934271546017852.jar"/>
     <property name="java.io.tmpdir" value="C:\Users\imrank\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
@@ -44,7 +44,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_71\jre"/>
-    <property name="sun.java.command" value="D:\workspace\GrepReplica\target\surefire\surefirebooter5103340357785642942.jar D:\workspace\GrepReplica\target\surefire\surefire2286848946698649073tmp D:\workspace\GrepReplica\target\surefire\surefire2718350529499080142tmp"/>
+    <property name="sun.java.command" value="D:\workspace\GrepReplica\target\surefire\surefirebooter9117934271546017852.jar D:\workspace\GrepReplica\target\surefire\surefire6384666028970552991tmp D:\workspace\GrepReplica\target\surefire\surefire2942453705691598666tmp"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
